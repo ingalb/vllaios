@@ -14,6 +14,16 @@
 
   <icon src="res/vllaznia-icon.png" />
 
+  <platform name="android">
+    <icon src="res/android/ic_launcher_ldpi.png" density="ldpi" />
+    <icon src="res/android/ic_launcher_mdpi.png" density="mdpi" />
+    <icon src="res/android/ic_launcher_hdpi.png" density="hdpi" />
+    <icon src="res/android/ic_launcher_xhdpi.png" density="xhdpi" />
+    <icon src="res/android/ic_launcher_xxhdpi.png" density="xxhdpi" />
+    <icon src="res/android/ic_launcher_xxxhdpi.png" density="xxxhdpi" />
+  </platform>
+
+
   <platform name="ios">
     <!-- iOS 7.0+ -->
     <!-- iPhone / iPod Touch -- to be fixed -->
