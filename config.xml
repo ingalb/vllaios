@@ -2,7 +2,7 @@
 <widget id="com.ingalb.vllaznia.app" version="2.1" versionCode="1" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
   <name>Vllaznia App</name>
   <description>
-    Aplikacioni realizuar per Futboll Klub Vllaznia Shkoder. Historia, lajme, informacione dhe statistika nga ekipi i pare shqiptar Vllaznia Shkoder (Albania).
+    Aplikacioni realizuar per Futboll Klub Vllaznia Shkoder.
   </description>
   <author email="contact@ingalb.info" href="http://www.ingalb.info">Ingalb Company</author>
   <content src="index.html" />
