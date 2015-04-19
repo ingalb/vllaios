@@ -1,6 +1,24 @@
 angular.module('vllaznia.controllers', [])
 
-.controller('AppCtrl', function($scope) {
+.controller('AppCtrl', function($scope, $ionicPopup) {
+     if(window.localStorage["notification"] !== undefined) {
+         notification = JSON.parse(window.localStorage["notification"]);
+         var PopNotification;
+         try {
+           PopNotification = $ionicPopup.alert({
+               title: notification.Title,
+               template: notification.Message
+             });
+              alertPopup.then(function(res) {
+                window.localStorage.removeItem("notification");
+                console.log('notification null');
+              });
+         }
+         catch (e) {
+         //  alert(e.message);
+         //  alert(notification.Title + "\n" + notification.Message);
+         }
+     }
 })
 
     .filter('html',function($sce){
@@ -49,7 +67,6 @@ angular.module('vllaznia.controllers', [])
                   template: notification.Message
                 });
                  alertPopup.then(function(res) {
-                   removeItem
                    window.localStorage.removeItem("notification");
                    console.log('notification null');
                  });
