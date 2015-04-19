@@ -10,8 +10,9 @@ angular.module('vllaznia.controllers', [])
                template: notification.Message
              });
               alertPopup.then(function(res) {
-                window.localStorage.removeItem("notification");
-                console.log('notification null');
+                window.localStorage.clear();
+                //window.localStorage.removeItem("notification");
+                //console.log('notification null');
               });
          }
          catch (e) {
@@ -67,8 +68,9 @@ angular.module('vllaznia.controllers', [])
                   template: notification.Message
                 });
                  alertPopup.then(function(res) {
-                   window.localStorage.removeItem("notification");
-                   console.log('notification null');
+                   window.localStorage.clear();
+                   //window.localStorage.removeItem("notification");
+                   //console.log('notification null');
                  });
             }
             catch (e) {
