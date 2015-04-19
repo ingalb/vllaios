@@ -49,7 +49,8 @@ angular.module('vllaznia.controllers', [])
                   template: notification.Message
                 });
                  alertPopup.then(function(res) {
-                   window.localStorage["notification"] = NULL;
+                   removeItem
+                   window.localStorage.removeItem("notification");
                    console.log('notification null');
                  });
             }
