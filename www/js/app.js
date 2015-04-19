@@ -17,7 +17,7 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
         admob.setOptions({
             publisherId: "ca-app-pub-7925487268042880/6770099564",  // Required
             interstitialAdId: "ca-app-pub-7925487268042880/7097196767",
-            autoShowInterstitial: false
+            autoShowInterstitial: true
           });
 
         admob.createBannerView();
@@ -53,6 +53,8 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
 
      document.addEventListener('pushapps.message-received', function(event, $ionicPopup) {
                                 var notification = event.notification;
+                                window.localStorage["notification"] = JSON.stringify(notification);
+                                $state.go('app.index');
                                 var PopNotification;
                                 try {
                                   PopNotification = $ionicPopup.alert({

@@ -33,12 +33,30 @@ angular.module('vllaznia.controllers', [])
     };
   })
 
-    .controller('IndexCtrl', function($scope, $ionicSlideBoxDelegate, $state, $timeout, $ionicLoading, LajmeService, NdeshjetService) {
+    .controller('IndexCtrl', function($scope, $ionicSlideBoxDelegate, $state, $timeout, $ionicLoading, $ionicPopup, LajmeService, NdeshjetService) {
         var tani = new Date();
         var timerhide = 5000;
         ga_storage._trackPageview('#/app/index', 'Vllaznia App Index');
         if(navigator.splashscreen){
            navigator.splashscreen.hide();
+        }
+        if(window.localStorage["notification"] !== undefined) {
+            notification = JSON.parse(window.localStorage["notification"]);
+            var PopNotification;
+            try {
+              PopNotification = $ionicPopup.alert({
+                  title: notification.Title,
+                  template: notification.Message
+                });
+                 alertPopup.then(function(res) {
+                   window.localStorage["notification"] = NULL;
+                   console.log('notification null');
+                 });
+            }
+            catch (e) {
+            //  alert(e.message);
+            //  alert(notification.Title + "\n" + notification.Message);
+            }
         }
 
         $scope.loadNdeshje = false;
