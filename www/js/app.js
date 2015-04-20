@@ -31,12 +31,19 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
     }
 
 
+window.plugins.OneSignal.getIds(function(ids) {
+    console.log('getIds: ' + JSON.stringify(ids)); // I can see PushToken and UserId in the console.
+    window.localStorage["notification"] = JSON.stringify(jsonData);
+    //$rootScope.pushToken = ids.pushToken;
+});
+
+/*
     didReceiveRemoteNotificationCallBack : function(jsonData) {
         alert("Notification received:\n" + JSON.stringify(jsonData));
         window.localStorage["notification"] = JSON.stringify(jsonData);
         console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
     }
-
+*/
 
 
 /**
