@@ -9,10 +9,10 @@ angular.module('vllaznia.controllers', [])
                title: notification.Title,
                template: notification.Message
              });
-              alertPopup.then(function(res) {
+            PopNotification.then(function(res) {
                 alert("Delete push");
-                window.localStorage.clear();
-                //window.localStorage.removeItem("notification");
+                //window.localStorage.clear();
+                window.localStorage.removeItem("notification");
                 //console.log('notification null');
               });
          }
@@ -68,9 +68,10 @@ angular.module('vllaznia.controllers', [])
                   title: notification.Title,
                   template: notification.Message
                 });
-                 alertPopup.then(function(res) {
-                   window.localStorage.clear();
-                   //window.localStorage.removeItem("notification");
+                 PopNotification.then(function(res) {
+                   alert("Ok index");
+                   //window.localStorage.clear();
+                   window.localStorage.removeItem("notification");
                    //console.log('notification null');
                  });
             }
