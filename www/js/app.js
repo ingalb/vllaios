@@ -14,9 +14,6 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
         ga_storage._trackPageview('#/app/index', 'Vllaznia App Home');
         //ga_storage._trackPageview('#/app/klasifikimi', 'Vllaznia App klasifikimi');
 
-        window.plugins.OneSignal.init("fb965b9c-e77a-11e4-a9ea-97388ec7efa9",
-                               {googleProjectNumber: "455582282730"},
-                               app.didReceiveRemoteNotificationCallBack);
 
         admob.setOptions({
             publisherId: "ca-app-pub-7925487268042880/6770099564",  // Required
@@ -30,6 +27,10 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
           alert(e.message);
     }
 
+window.plugins.OneSignal.init("fb965b9c-e77a-11e4-a9ea-97388ec7efa9",
+                       {googleProjectNumber: "455582282730"},
+                       app.didReceiveRemoteNotificationCallBack);
+
 
 window.plugins.OneSignal.getIds(function(ids) {
     console.log('getIds: ' + JSON.stringify(ids)); // I can see PushToken and UserId in the console.
@@ -37,13 +38,13 @@ window.plugins.OneSignal.getIds(function(ids) {
     //$rootScope.pushToken = ids.pushToken;
 });
 
-/*
+
     didReceiveRemoteNotificationCallBack : function(jsonData) {
         alert("Notification received:\n" + JSON.stringify(jsonData));
         window.localStorage["notification"] = JSON.stringify(jsonData);
         console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
     }
-*/
+
 
 
 /**
