@@ -14,6 +14,10 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
         ga_storage._trackPageview('#/app/index', 'Vllaznia App Home');
         //ga_storage._trackPageview('#/app/klasifikimi', 'Vllaznia App klasifikimi');
 
+        window.plugins.OneSignal.init("fb965b9c-e77a-11e4-a9ea-97388ec7efa9",
+                               {googleProjectNumber: "455582282730"},
+                               app.didReceiveRemoteNotificationCallBack);
+
         admob.setOptions({
             publisherId: "ca-app-pub-7925487268042880/6770099564",  // Required
             interstitialAdId: "ca-app-pub-7925487268042880/7097196767",
@@ -27,6 +31,15 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
     }
 
 
+    didReceiveRemoteNotificationCallBack : function(jsonData) {
+        alert("Notification received:\n" + JSON.stringify(jsonData));
+        window.localStorage["notification"] = JSON.stringify(jsonData);
+        console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
+    }
+
+
+
+/**
 //Pushapps notification
 
      PushNotification.registerDevice('455582282730', '9128f99a-4783-4c6e-803d-a77f13d332ca', function (pushToken) {
@@ -73,7 +86,7 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
                               //alert("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
                               });
 
-
+***/
 
   // alert("Ready");
    if(window.cordova && window.cordova.plugins.Keyboard) {
