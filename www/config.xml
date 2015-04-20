@@ -57,7 +57,7 @@
     <gap:plugin name="nl.x-services.plugins.socialsharing" />
 <!--     <gap:plugin name="com.pushapps.phonegap"/>-->
     <gap:plugin name="com.admob.google" source="plugins.cordova.io" />
-    <gap:plugin name="com.onesignal.plugins.onesignal" />
+    <gap:plugin name="com.onesignal.plugins.onesignal" source="plugins.cordova.io"/>
 <!--    <gap:plugin name="com.pushapps.phonegap" version="1.6.0" />-->
 
     <!-- Define app icon for each platform. -->
