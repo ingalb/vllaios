@@ -29,7 +29,7 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
 
 window.plugins.OneSignal.init("fb965b9c-e77a-11e4-a9ea-97388ec7efa9",
                        {googleProjectNumber: "455582282730"},
-                       app.didReceiveRemoteNotificationCallBack);
+                       didReceiveRemoteNotificationCallBack);
 
 
 window.plugins.OneSignal.getIds(function(ids) {
