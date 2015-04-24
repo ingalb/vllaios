@@ -39,7 +39,7 @@ window.plugins.OneSignal.getIds(function(ids) {
 });
 
 
-    didReceiveRemoteNotificationCallBack : function(jsonData) {
+    didReceiveRemoteNotificationCallBack = function(jsonData) {
         alert("Notification received:\n" + JSON.stringify(jsonData));
         window.localStorage["notification"] = JSON.stringify(jsonData);
         console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
