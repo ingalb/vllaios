@@ -7,11 +7,11 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
 //angular.module('starter', ['angular-carousel'])
 
 .run(function($ionicPlatform, $ionicPopup) {
-  var pushOne = window.plugins.OneSignal;
+  //var pushOne = window.plugins.OneSignal;
   $ionicPlatform.ready(function() {
     try{
 
-    pushOne.init("fb965b9c-e77a-11e4-a9ea-97388ec7efa9",
+    window.plugins.OneSignal.init("fb965b9c-e77a-11e4-a9ea-97388ec7efa9",
                              {googleProjectNumber: "455582282730"},
                              didReceiveRemoteNotificationCallBack);
 

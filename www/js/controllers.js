@@ -148,6 +148,7 @@ angular.module('vllaznia.controllers', [])
 	    });
         LajmeService.getAll(function(data) {
             $scope.lajme = data;
+            console.log($scope.lajme);
             $ionicLoading.hide();
         });
         $scope.doRefresh = function() {

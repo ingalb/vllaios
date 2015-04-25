@@ -4,7 +4,7 @@
   </ion-nav-buttons>
   <ion-content class="has-header">
   <ion-refresher
-    pulling-text="Pull to refresh..." on-refresh="doRefresh()">
+    pulling-text="Pull to refresh..." spinner="android" on-refresh="doRefresh()">
   </ion-refresher>
   <div class="list list-inset">
     <label class="item item-input">
@@ -13,10 +13,10 @@
     </label>
   </div>
   <div class="list">
-    <a ng-repeat="lajmi in lajme | filter:query" href="#/app/lajmi/{{$index + 1}}" class="item item-thumbnail-left">
+    <a collection-repeat="lajmi in lajme | filter:query" href="#/app/lajmi/{{$index + 1}}" class="item item-thumbnail-left">
         <img ng-src="http://www.fkvllaznia.net/main/vllaznia/_files/newspublish/{{lajmi.image}}">
         <h2 class="lajmi-titulli assertive">{{lajmi.title}}</h2>
-        <p ng-bind-html="'{{lajmi.summary}}' | html"></p>
+        <p data-ng-bind-html="lajmi.summary"></p>
     </a>
   </div>
 
