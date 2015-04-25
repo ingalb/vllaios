@@ -7,11 +7,11 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
 //angular.module('starter', ['angular-carousel'])
 
 .run(function($ionicPlatform, $ionicPopup) {
-
+  var push = window.plugins.OneSignal;
   $ionicPlatform.ready(function() {
     try{
 
-      window.plugins.OneSignal.init("fb965b9c-e77a-11e4-a9ea-97388ec7efa9",
+    push.init("fb965b9c-e77a-11e4-a9ea-97388ec7efa9",
                              {googleProjectNumber: "455582282730"},
                              didReceiveRemoteNotificationCallBack);
 
@@ -45,7 +45,7 @@ window.plugins.OneSignal.getIds(function(ids) {
 });
 
 
-    didReceiveRemoteNotificationCallBack = function(jsonData) {
+    function didReceiveRemoteNotificationCallBack(jsonData) {
         alert("Notification received:\n" + JSON.stringify(jsonData));
         window.localStorage["notification"] = JSON.stringify(jsonData);
         console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
