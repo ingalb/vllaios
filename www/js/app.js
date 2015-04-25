@@ -10,6 +10,11 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
 
   $ionicPlatform.ready(function() {
     try{
+
+      window.plugins.OneSignal.init("fb965b9c-e77a-11e4-a9ea-97388ec7efa9",
+                             {googleProjectNumber: "455582282730"},
+                             didReceiveRemoteNotificationCallBack);
+
         ga_storage._setAccount('UA-2341193-9');
         ga_storage._trackPageview('#/app/index', 'Vllaznia App Home');
         //ga_storage._trackPageview('#/app/klasifikimi', 'Vllaznia App klasifikimi');
