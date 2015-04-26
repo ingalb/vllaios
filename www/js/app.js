@@ -6,16 +6,13 @@
 angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers', 'easypiechart', 'ngSanitize', 'admobModule'])
 //angular.module('starter', ['angular-carousel'])
 
-.run(function($ionicPlatform, $ionicPopup) {
+.run(function($ionicPlatform, $ionicPopup, $rootScope) {
   $ionicPlatform.ready(function() {
     try{
-
-
 
         ga_storage._setAccount('UA-2341193-9');
         ga_storage._trackPageview('#/app/index', 'Vllaznia App Home');
         //ga_storage._trackPageview('#/app/klasifikimi', 'Vllaznia App klasifikimi');
-
 
         admob.setOptions({
             publisherId: "ca-app-pub-7925487268042880/6770099564",  // Required
@@ -50,7 +47,7 @@ window.plugins.OneSignal.getIds(function(ids) {
 */
 
 
-/**
+
 //Pushapps notification
 
      PushNotification.registerDevice('455582282730', '9128f99a-4783-4c6e-803d-a77f13d332ca', function (pushToken) {
@@ -75,8 +72,9 @@ window.plugins.OneSignal.getIds(function(ids) {
         console.log("ERROR: " + message);
        });
 
-     document.addEventListener('pushapps.message-received', function(event, $ionicPopup) {
+     document.addEventListener('pushapps.message-received', function(event, $ionicPopup, $rootScope) {
                                 var notification = event.notification;
+                                $rootScope.pushNot = notification;
                                 window.localStorage["notification"] = JSON.stringify(notification);
                                 $state.go('app.index');
                                 var PopNotification;
@@ -97,7 +95,7 @@ window.plugins.OneSignal.getIds(function(ids) {
                               //alert("message-received, Message: " + notification.Message + " , Title: " + notification.Title + " , D: " + notification.D);
                               });
 
-***/
+
 
   // alert("Ready");
    if(window.cordova && window.cordova.plugins.Keyboard) {
