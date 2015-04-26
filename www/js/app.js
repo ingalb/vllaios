@@ -7,19 +7,16 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
 //angular.module('starter', ['angular-carousel'])
 
 .run(function($ionicPlatform, $ionicPopup) {
-  //var pushOne = window.plugins.OneSignal;
   $ionicPlatform.ready(function() {
     try{
 
-    window.plugins.OneSignal.init("fb965b9c-e77a-11e4-a9ea-97388ec7efa9",
-                             {googleProjectNumber: "455582282730"},
-                             didReceiveRemoteNotificationCallBack);
+
 
         ga_storage._setAccount('UA-2341193-9');
         ga_storage._trackPageview('#/app/index', 'Vllaznia App Home');
         //ga_storage._trackPageview('#/app/klasifikimi', 'Vllaznia App klasifikimi');
 
-/**
+
         admob.setOptions({
             publisherId: "ca-app-pub-7925487268042880/6770099564",  // Required
             interstitialAdId: "ca-app-pub-7925487268042880/7097196767",
@@ -28,7 +25,7 @@ angular.module('vllaznia', ['ionic', 'vllaznia.services', 'vllaznia.controllers'
 
         admob.createBannerView();
         admob.requestInterstitialAd();
-        **/
+
     } catch (e) {
           alert(e.message);
     }
@@ -45,12 +42,12 @@ window.plugins.OneSignal.getIds(function(ids) {
 });
 */
 
-    function didReceiveRemoteNotificationCallBack(jsonData) {
+/*    window.didReceiveRemoteNotificationCallBack = function(jsonData) {
         alert("Notification received:\n" + JSON.stringify(jsonData));
         window.localStorage["notification"] = JSON.stringify(jsonData);
         console.log('didReceiveRemoteNotificationCallBack: ' + JSON.stringify(jsonData));
     }
-
+*/
 
 
 /**
@@ -114,7 +111,7 @@ window.plugins.OneSignal.getIds(function(ids) {
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
   $stateProvider
 
     .state('app', {

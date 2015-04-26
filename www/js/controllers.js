@@ -1,26 +1,9 @@
 angular.module('vllaznia.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicPopup) {
-     if(window.localStorage["notification"] !== undefined) {
-         notification = JSON.parse(window.localStorage["notification"]);
-         var PopNotification;
-         try {
-           PopNotification = $ionicPopup.alert({
-               title: notification.Title,
-               template: notification.Message
-             });
-            PopNotification.then(function(res) {
-                alert("Delete push");
-                //window.localStorage.clear();
-                window.localStorage.removeItem("notification");
-                //console.log('notification null');
-              });
-         }
-         catch (e) {
-         //  alert(e.message);
-         //  alert(notification.Title + "\n" + notification.Message);
-         }
-     }
+   if(navigator.splashscreen){
+      navigator.splashscreen.hide();
+   }
 })
 
     .filter('html',function($sce){
@@ -60,6 +43,7 @@ angular.module('vllaznia.controllers', [])
         if(navigator.splashscreen){
            navigator.splashscreen.hide();
         }
+        /**
         if(window.localStorage["notification"] !== undefined) {
             notification = JSON.parse(window.localStorage["notification"]);
             var PopNotification;
@@ -80,7 +64,7 @@ angular.module('vllaznia.controllers', [])
             //  alert(notification.Title + "\n" + notification.Message);
             }
         }
-
+     **/
         $scope.loadNdeshje = false;
         $scope.go = function ( path ) {
           //alert(path);
@@ -148,7 +132,7 @@ angular.module('vllaznia.controllers', [])
 	    });
         LajmeService.getAll(function(data) {
             $scope.lajme = data;
-            console.log($scope.lajme);
+            //console.log($scope.lajme);
             $ionicLoading.hide();
         });
         $scope.doRefresh = function() {
