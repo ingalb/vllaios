@@ -3,8 +3,8 @@
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.vllaznia.app"
-        version   = "3.0.0">
+        id        = "com.ingalb.vllaznia.ios.app"
+        version   = "1.0.0">
 
     <name>Vllaznia App</name>
 
@@ -21,12 +21,13 @@
         following tag to your config.xml; you will still have the INTERNET
         permission on your app, which PhoneGap requires.
     -->
+    <preference name="permissions"                value="none"/>
 
     <!-- Customize your app and platform with the preference element. -->
     <preference name="orientation"                value="default" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="false" />           <!-- all: hides the status bar at the top of the screen -->
-    <preference name="webviewbounce"              value="true" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
+    <preference name="webviewbounce"              value="false" />           <!-- ios: control whether the screen 'bounces' when scrolled beyond the top -->
     <preference name="prerendered-icon"           value="true" />           <!-- ios: if icon is prerendered, iOS will not apply it's gloss to the app's icon on the user's home screen -->
     <preference name="stay-in-webview"            value="false" />          <!-- ios: external links should open in the default browser, 'true' would use the webview the app lives in -->
     <preference name="ios-statusbarstyle"         value="black-opaque" />   <!-- ios: black-translucent will appear black because the PhoneGap webview doesn't go beneath the status bar -->
@@ -59,7 +60,8 @@
 <!--    <gap:plugin name="com.onesignal.plugins.onesignal"/>-->
 <!--     <gap:plugin name="com.pushapps.phonegap"/>-->
     <gap:plugin name="com.admob.google" source="plugins.cordova.io" />
-    <gap:plugin name="com.pushapps.phonegap" version="1.6.0" />
+
+<!--    <gap:plugin name="com.pushapps.phonegap" version="1.6.0" />-->
 
     <!-- Define app icon for each platform. -->
     <icon src="icon.png" />

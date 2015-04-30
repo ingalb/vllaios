@@ -1,30 +1,9 @@
 angular.module('vllaznia.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicPopup, $rootScope) {
+.controller('AppCtrl', function($scope, $ionicPopup) {
    if(navigator.splashscreen){
       navigator.splashscreen.hide();
    }
-   if($rootScope.pushNot.Message != 'undefined')
-     {
-       var PopNotification;
-       try {
-         PopNotification = $ionicPopup.alert({
-             title: $rootScope.pushNot.Title,
-             template: n$rootScope.pushNot.Message
-           });
-            PopNotification.then(function(res) {
-              alert("Ok index");
-              //window.localStorage.clear();
-              window.localStorage.removeItem("notification");
-              //console.log('notification null');
-              $rootScope.pushNot == NULL;
-            });
-       }
-       catch (e) {
-        alert($rootScope.pushNot.Title);
-       //  alert(notification.Title + "\n" + notification.Message);
-       }
-     }
 })
 
     .filter('html',function($sce){
@@ -57,35 +36,13 @@ angular.module('vllaznia.controllers', [])
     };
   })
 
-    .controller('IndexCtrl', function($scope, $ionicSlideBoxDelegate, $state, $timeout, $ionicLoading, $rootScope, $ionicPopup, LajmeService, NdeshjetService) {
+    .controller('IndexCtrl', function($scope, $ionicSlideBoxDelegate, $state, $timeout, $ionicLoading, $ionicPopup, LajmeService, NdeshjetService) {
         var tani = new Date();
         var timerhide = 5000;
         ga_storage._trackPageview('#/app/index', 'Vllaznia App Index');
         if(navigator.splashscreen){
            navigator.splashscreen.hide();
         }
-
-        if($rootScope.pushNot.Message != 'undefined')
-          {
-            var PopNotification;
-            try {
-              PopNotification = $ionicPopup.alert({
-                  title: $rootScope.pushNot.Title,
-                  template: n$rootScope.pushNot.Message
-                });
-                 PopNotification.then(function(res) {
-                   alert("Ok index");
-                   //window.localStorage.clear();
-                   window.localStorage.removeItem("notification");
-                   //console.log('notification null');
-                   $rootScope.pushNot == NULL;
-                 });
-            }
-            catch (e) {
-             alert($rootScope.pushNot.Title);
-            //  alert(notification.Title + "\n" + notification.Message);
-            }
-          }
         /**
         if(window.localStorage["notification"] !== undefined) {
             notification = JSON.parse(window.localStorage["notification"]);
